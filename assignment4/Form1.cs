@@ -69,24 +69,23 @@ namespace assignment4
         private void calculatButten_Click(object sender, EventArgs e)
         {
 
+            double feet = Convert.ToDouble(feetbox.Text);
+            double kilo = Convert.ToDouble(kiloTextBox.Text);
+            double inche = Convert.ToDouble(inchebox.Text);
+            double pound = Convert.ToDouble(poundTextBox.Text);
 
-            float feet = float.Parse(feetbox.Text);
-            float kilo = float.Parse(kiloTextBox.Text);
-            float inche = float.Parse(inchebox.Text);
-            float pound = float.Parse(poundTextBox.Text);
 
 
-            float result = 0;
+
+            double result = 0;
             if (imperialButten.Checked)
             {
-                inche = 0;
-                pound = 0;
-              result = (kilo * 703) / (feet * feet);
+
+                result = (kilo * 703) / (feet * feet);
             }
             else if (metricButten.Checked)
             {
-                feet = 0;
-                kilo = 0;
+
                 result = (pound) / (inche / 100) * (inche / 100);
             }
             bmiTextBox.Text = result.ToString();
@@ -120,6 +119,11 @@ namespace assignment4
             inchebox.Visible = false;
             poundTextBox.Visible = false;
             bmiTextBox.Text = "Result";
+        }
+
+        private void bmiTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

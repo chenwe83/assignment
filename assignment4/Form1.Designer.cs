@@ -213,6 +213,7 @@
             this.bmiTextBox.TabIndex = 9;
             this.bmiTextBox.Text = "Result";
             this.bmiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bmiTextBox.TextChanged += new System.EventHandler(this.bmiTextBox_TextChanged);
             // 
             // underTextbox
             // 
