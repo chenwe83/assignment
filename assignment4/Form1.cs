@@ -69,23 +69,21 @@ namespace assignment4
         private void calculatButten_Click(object sender, EventArgs e)
         {
 
-            double feet = Convert.ToDouble(feetbox.Text);
-            double kilo = Convert.ToDouble(kiloTextBox.Text);
-            double inche = Convert.ToDouble(inchebox.Text);
-            double pound = Convert.ToDouble(poundTextBox.Text);
-
-
-
-
+            double feet = 0;
+            double kilo = 0;
+            double inche = 0;
+            double pound = 0;
             double result = 0;
             if (imperialButten.Checked)
             {
-
+                feet = Convert.ToDouble(feetbox.Text);
+                kilo = Convert.ToDouble(kiloTextBox.Text);
                 result = (kilo * 703) / (feet * feet);
             }
             else if (metricButten.Checked)
             {
-
+                inche = Convert.ToDouble(inchebox.Text);
+                pound = Convert.ToDouble(poundTextBox.Text);
                 result = (pound) / (inche / 100) * (inche / 100);
             }
             bmiTextBox.Text = result.ToString();
