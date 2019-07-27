@@ -38,9 +38,15 @@
             this.WeightLable = new System.Windows.Forms.Label();
             this.poundTextBox = new System.Windows.Forms.TextBox();
             this.kiloTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.inchebox = new System.Windows.Forms.TextBox();
             this.kiloLable = new System.Windows.Forms.Label();
+            this.calculatButten = new System.Windows.Forms.Button();
+            this.resetButten = new System.Windows.Forms.Button();
+            this.bmiTextBox = new System.Windows.Forms.TextBox();
+            this.underTextbox = new System.Windows.Forms.TextBox();
+            this.normalTextbox = new System.Windows.Forms.TextBox();
+            this.overTextbox = new System.Windows.Forms.TextBox();
+            this.obeseTextbox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,14 +160,6 @@
             this.kiloTextBox.Size = new System.Drawing.Size(64, 38);
             this.kiloTextBox.TabIndex = 4;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBox1.Location = new System.Drawing.Point(12, 391);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 38);
-            this.textBox1.TabIndex = 7;
-            // 
             // inchebox
             // 
             this.inchebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
@@ -169,6 +167,7 @@
             this.inchebox.Name = "inchebox";
             this.inchebox.Size = new System.Drawing.Size(64, 38);
             this.inchebox.TabIndex = 4;
+            this.inchebox.Visible = false;
             // 
             // kiloLable
             // 
@@ -181,13 +180,93 @@
             this.kiloLable.Text = "Kilograms";
             this.kiloLable.Click += new System.EventHandler(this.label2_Click);
             // 
+            // calculatButten
+            // 
+            this.calculatButten.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.calculatButten.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.calculatButten.Location = new System.Drawing.Point(12, 291);
+            this.calculatButten.Name = "calculatButten";
+            this.calculatButten.Size = new System.Drawing.Size(140, 47);
+            this.calculatButten.TabIndex = 7;
+            this.calculatButten.Text = "Calculat";
+            this.calculatButten.UseVisualStyleBackColor = false;
+            this.calculatButten.Click += new System.EventHandler(this.calculatButten_Click);
+            // 
+            // resetButten
+            // 
+            this.resetButten.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.resetButten.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.resetButten.Location = new System.Drawing.Point(158, 291);
+            this.resetButten.Name = "resetButten";
+            this.resetButten.Size = new System.Drawing.Size(112, 47);
+            this.resetButten.TabIndex = 8;
+            this.resetButten.Text = "Reset";
+            this.resetButten.UseVisualStyleBackColor = false;
+            this.resetButten.Click += new System.EventHandler(this.resetButten_Click);
+            // 
+            // bmiTextBox
+            // 
+            this.bmiTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.bmiTextBox.Location = new System.Drawing.Point(12, 362);
+            this.bmiTextBox.Name = "bmiTextBox";
+            this.bmiTextBox.Size = new System.Drawing.Size(100, 38);
+            this.bmiTextBox.TabIndex = 9;
+            this.bmiTextBox.Text = "Result";
+            this.bmiTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // underTextbox
+            // 
+            this.underTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.underTextbox.Location = new System.Drawing.Point(126, 362);
+            this.underTextbox.Name = "underTextbox";
+            this.underTextbox.Size = new System.Drawing.Size(166, 38);
+            this.underTextbox.TabIndex = 10;
+            this.underTextbox.Text = "UnderWeight";
+            this.underTextbox.Visible = false;
+            // 
+            // normalTextbox
+            // 
+            this.normalTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.normalTextbox.Location = new System.Drawing.Point(158, 362);
+            this.normalTextbox.Name = "normalTextbox";
+            this.normalTextbox.Size = new System.Drawing.Size(100, 38);
+            this.normalTextbox.TabIndex = 10;
+            this.normalTextbox.Text = "Normal";
+            this.normalTextbox.Visible = false;
+            // 
+            // overTextbox
+            // 
+            this.overTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.overTextbox.Location = new System.Drawing.Point(126, 362);
+            this.overTextbox.Name = "overTextbox";
+            this.overTextbox.Size = new System.Drawing.Size(154, 38);
+            this.overTextbox.TabIndex = 10;
+            this.overTextbox.Text = "OverWeight";
+            this.overTextbox.Visible = false;
+            // 
+            // obeseTextbox
+            // 
+            this.obeseTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.obeseTextbox.Location = new System.Drawing.Point(158, 362);
+            this.obeseTextbox.Name = "obeseTextbox";
+            this.obeseTextbox.Size = new System.Drawing.Size(100, 38);
+            this.obeseTextbox.TabIndex = 10;
+            this.obeseTextbox.Text = "Obese";
+            this.obeseTextbox.Visible = false;
+            // 
             // BmiCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(304, 441);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.obeseTextbox);
+            this.Controls.Add(this.overTextbox);
+            this.Controls.Add(this.normalTextbox);
+            this.Controls.Add(this.underTextbox);
+            this.Controls.Add(this.bmiTextBox);
+            this.Controls.Add(this.resetButten);
+            this.Controls.Add(this.calculatButten);
             this.Controls.Add(this.kiloLable);
             this.Controls.Add(this.feetLabel);
             this.Controls.Add(this.kiloTextBox);
@@ -203,6 +282,7 @@
             this.Name = "BmiCalculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
+            this.Load += new System.EventHandler(this.BmiCalculator_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,9 +302,15 @@
         private System.Windows.Forms.Label WeightLable;
         private System.Windows.Forms.TextBox poundTextBox;
         private System.Windows.Forms.TextBox kiloTextBox;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox inchebox;
         private System.Windows.Forms.Label kiloLable;
+        private System.Windows.Forms.Button calculatButten;
+        private System.Windows.Forms.Button resetButten;
+        private System.Windows.Forms.TextBox bmiTextBox;
+        private System.Windows.Forms.TextBox underTextbox;
+        private System.Windows.Forms.TextBox normalTextbox;
+        private System.Windows.Forms.TextBox overTextbox;
+        private System.Windows.Forms.TextBox obeseTextbox;
     }
 }
 

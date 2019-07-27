@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace assignment4
 {
+
     public partial class BmiCalculator : Form
     {
+
         public BmiCalculator()
         {
             InitializeComponent();
@@ -38,6 +40,8 @@ namespace assignment4
             feetLabel.Text = "Inche";
             feetbox.Visible = false;
             kiloTextBox.Visible = false;
+            inchebox.Visible = true;
+            poundTextBox.Visible = true;
             kiloLable.Text = "Pounds";
 
         }
@@ -46,8 +50,76 @@ namespace assignment4
         {
             feetbox.Visible = true;
             kiloTextBox.Visible = true;
+            inchebox.Visible = false;
+            poundTextBox.Visible = false;
             feetLabel.Text = "Feet";
             kiloLable.Text = "Kilograms";
+        }
+
+        private void BmiCalculator_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calculatButten_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calculatButten_Click(object sender, EventArgs e)
+        {
+
+
+            float feet = float.Parse(feetbox.Text);
+            float kilo = float.Parse(kiloTextBox.Text);
+            float inche = float.Parse(inchebox.Text);
+            float pound = float.Parse(poundTextBox.Text);
+
+
+            float result = 0;
+            if (imperialButten.Checked)
+            {
+                inche = 0;
+                pound = 0;
+              result = (kilo * 703) / (feet * feet);
+            }
+            else if (metricButten.Checked)
+            {
+                feet = 0;
+                kilo = 0;
+                result = (pound) / (inche / 100) * (inche / 100);
+            }
+            bmiTextBox.Text = result.ToString();
+
+            if (result < 18.5)
+            {
+                underTextbox.Visible = true;
+            }
+            else if (result >= 18.5 && result < 25)
+            {
+                normalTextbox.Visible = true;
+            }
+            else if (result >= 25 && result < 30)
+            {
+                overTextbox.Visible = true;
+            }
+            else if (result >= 30)
+            {
+                obeseTextbox.Visible = true;
+            }
+        }
+
+        private void resetButten_Click(object sender, EventArgs e)
+        {
+            feetbox.Visible = true;
+            kiloTextBox.Visible = true;
+            feetLabel.Text = "Feet";
+            kiloLable.Text = "Kilograms";
+            kiloTextBox.Text = "";
+            feetbox.Text = "";
+            inchebox.Visible = false;
+            poundTextBox.Visible = false;
+            bmiTextBox.Text = "Result";
         }
     }
 }
