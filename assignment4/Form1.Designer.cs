@@ -34,13 +34,12 @@
             this.metricButten = new System.Windows.Forms.RadioButton();
             this.heightlable = new System.Windows.Forms.Label();
             this.feetbox = new System.Windows.Forms.TextBox();
-            this.inchebox = new System.Windows.Forms.TextBox();
             this.feetLabel = new System.Windows.Forms.Label();
-            this.incheLabel = new System.Windows.Forms.Label();
             this.WeightLable = new System.Windows.Forms.Label();
             this.poundTextBox = new System.Windows.Forms.TextBox();
             this.kiloTextBox = new System.Windows.Forms.TextBox();
-            this.poundLable = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.inchebox = new System.Windows.Forms.TextBox();
             this.kiloLable = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +84,7 @@
             this.imperialButten.Text = "Imperial";
             this.imperialButten.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.imperialButten.UseVisualStyleBackColor = true;
+            this.imperialButten.CheckedChanged += new System.EventHandler(this.imperialButten_CheckedChanged);
             // 
             // metricButten
             // 
@@ -96,99 +96,87 @@
             this.metricButten.TabIndex = 1;
             this.metricButten.Text = "Metric";
             this.metricButten.UseVisualStyleBackColor = true;
+            this.metricButten.CheckedChanged += new System.EventHandler(this.metricButten_CheckedChanged);
             // 
             // heightlable
             // 
             this.heightlable.AutoSize = true;
-            this.heightlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.heightlable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.heightlable.Location = new System.Drawing.Point(12, 141);
             this.heightlable.Name = "heightlable";
-            this.heightlable.Size = new System.Drawing.Size(106, 25);
+            this.heightlable.Size = new System.Drawing.Size(144, 31);
             this.heightlable.TabIndex = 2;
             this.heightlable.Text = "My Height:";
             // 
             // feetbox
             // 
-            this.feetbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.feetbox.Location = new System.Drawing.Point(124, 138);
+            this.feetbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.feetbox.Location = new System.Drawing.Point(18, 172);
             this.feetbox.Name = "feetbox";
-            this.feetbox.Size = new System.Drawing.Size(64, 30);
+            this.feetbox.Size = new System.Drawing.Size(64, 38);
             this.feetbox.TabIndex = 3;
             this.feetbox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // inchebox
-            // 
-            this.inchebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.inchebox.Location = new System.Drawing.Point(124, 175);
-            this.inchebox.Name = "inchebox";
-            this.inchebox.Size = new System.Drawing.Size(64, 30);
-            this.inchebox.TabIndex = 4;
             // 
             // feetLabel
             // 
             this.feetLabel.AutoSize = true;
-            this.feetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.feetLabel.Location = new System.Drawing.Point(194, 141);
+            this.feetLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.feetLabel.Location = new System.Drawing.Point(88, 175);
             this.feetLabel.Name = "feetLabel";
-            this.feetLabel.Size = new System.Drawing.Size(51, 25);
+            this.feetLabel.Size = new System.Drawing.Size(69, 31);
             this.feetLabel.TabIndex = 5;
             this.feetLabel.Text = "Feet";
-            // 
-            // incheLabel
-            // 
-            this.incheLabel.AutoSize = true;
-            this.incheLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.incheLabel.Location = new System.Drawing.Point(194, 175);
-            this.incheLabel.Name = "incheLabel";
-            this.incheLabel.Size = new System.Drawing.Size(60, 25);
-            this.incheLabel.TabIndex = 6;
-            this.incheLabel.Text = "Inche";
-            this.incheLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // WeightLable
             // 
             this.WeightLable.AutoSize = true;
-            this.WeightLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.WeightLable.Location = new System.Drawing.Point(12, 229);
+            this.WeightLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.WeightLable.Location = new System.Drawing.Point(11, 213);
             this.WeightLable.Name = "WeightLable";
-            this.WeightLable.Size = new System.Drawing.Size(112, 25);
+            this.WeightLable.Size = new System.Drawing.Size(149, 31);
             this.WeightLable.TabIndex = 2;
             this.WeightLable.Text = "My Weight:";
             // 
             // poundTextBox
             // 
-            this.poundTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.poundTextBox.Location = new System.Drawing.Point(124, 226);
+            this.poundTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.poundTextBox.Location = new System.Drawing.Point(17, 247);
             this.poundTextBox.Name = "poundTextBox";
-            this.poundTextBox.Size = new System.Drawing.Size(64, 30);
+            this.poundTextBox.Size = new System.Drawing.Size(64, 38);
             this.poundTextBox.TabIndex = 3;
             this.poundTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // kiloTextBox
             // 
-            this.kiloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.kiloTextBox.Location = new System.Drawing.Point(124, 263);
+            this.kiloTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.kiloTextBox.Location = new System.Drawing.Point(17, 247);
             this.kiloTextBox.Name = "kiloTextBox";
-            this.kiloTextBox.Size = new System.Drawing.Size(64, 30);
+            this.kiloTextBox.Size = new System.Drawing.Size(64, 38);
             this.kiloTextBox.TabIndex = 4;
             // 
-            // poundLable
+            // textBox1
             // 
-            this.poundLable.AutoSize = true;
-            this.poundLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.poundLable.Location = new System.Drawing.Point(194, 229);
-            this.poundLable.Name = "poundLable";
-            this.poundLable.Size = new System.Drawing.Size(79, 25);
-            this.poundLable.TabIndex = 5;
-            this.poundLable.Text = "Pounds";
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBox1.Location = new System.Drawing.Point(12, 391);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 38);
+            this.textBox1.TabIndex = 7;
+            // 
+            // inchebox
+            // 
+            this.inchebox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.inchebox.Location = new System.Drawing.Point(18, 172);
+            this.inchebox.Name = "inchebox";
+            this.inchebox.Size = new System.Drawing.Size(64, 38);
+            this.inchebox.TabIndex = 4;
             // 
             // kiloLable
             // 
             this.kiloLable.AutoSize = true;
-            this.kiloLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.kiloLable.Location = new System.Drawing.Point(194, 263);
+            this.kiloLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.kiloLable.Location = new System.Drawing.Point(87, 250);
             this.kiloLable.Name = "kiloLable";
-            this.kiloLable.Size = new System.Drawing.Size(99, 25);
+            this.kiloLable.Size = new System.Drawing.Size(134, 31);
             this.kiloLable.TabIndex = 6;
             this.kiloLable.Text = "Kilograms";
             this.kiloLable.Click += new System.EventHandler(this.label2_Click);
@@ -199,9 +187,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(304, 441);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.kiloLable);
-            this.Controls.Add(this.incheLabel);
-            this.Controls.Add(this.poundLable);
             this.Controls.Add(this.feetLabel);
             this.Controls.Add(this.kiloTextBox);
             this.Controls.Add(this.inchebox);
@@ -231,13 +218,12 @@
         private System.Windows.Forms.RadioButton imperialButten;
         private System.Windows.Forms.Label heightlable;
         private System.Windows.Forms.TextBox feetbox;
-        private System.Windows.Forms.TextBox inchebox;
         private System.Windows.Forms.Label feetLabel;
-        private System.Windows.Forms.Label incheLabel;
         private System.Windows.Forms.Label WeightLable;
         private System.Windows.Forms.TextBox poundTextBox;
         private System.Windows.Forms.TextBox kiloTextBox;
-        private System.Windows.Forms.Label poundLable;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox inchebox;
         private System.Windows.Forms.Label kiloLable;
     }
 }

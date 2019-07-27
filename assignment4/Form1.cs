@@ -31,5 +31,23 @@ namespace assignment4
         {
 
         }
+
+        private void metricButten_CheckedChanged(object sender, EventArgs e)
+        {
+
+            feetLabel.Text = "Inche";
+            feetbox.Visible = false;
+            kiloTextBox.Visible = false;
+            kiloLable.Text = "Pounds";
+
+        }
+
+        private void imperialButten_CheckedChanged(object sender, EventArgs e)
+        {
+            feetbox.Visible = true;
+            kiloTextBox.Visible = true;
+            feetLabel.Text = "Feet";
+            kiloLable.Text = "Kilograms";
+        }
     }
 }
